@@ -1,3 +1,5 @@
+import $ from 'jquery'; 
+import axios from 'axios';
 import React, { Component } from 'react';
 
 class SubmitForm extends React.Component {
@@ -34,10 +36,16 @@ handleLocation(event){
 }
 
 handleSave(event) {
-  console.log(this.state.typeText)
-  console.log(this.state.distanceText)
-  console.log(this.state.priceText)
-  console.log(this.state.locationText)
+  axios.get("https://safe-crag-41140.herokuapp.com/api/v1/key", {crossdomain: true})
+    .then((response) => {
+      var key = response.data
+
+  var type = (this.state.typeText)
+    var distance = (this.state.distanceText)
+    var price = (this.state.priceText)
+    var locat = (this.state.locationText)
+    debugger;
+    })
 }
 
 render() {
@@ -73,9 +81,9 @@ render() {
       </label>
       <button className="save" type="button" onClick=
       {this.handleSave}>Save</button>
-      </form>
-      </div>
-      );
+  </form>
+    </div>
+    );
       }
 }
 export default SubmitForm;
