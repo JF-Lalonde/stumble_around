@@ -1,6 +1,8 @@
 import $ from 'jquery'; 
 import axios from 'axios';
 import React, { Component } from 'react';
+import {geolocated} from 'react-geolocated';
+import LocaButton from './LocationButton';
 
 class SubmitForm extends React.Component {
   constructor(props) {
@@ -20,12 +22,8 @@ class SubmitForm extends React.Component {
 }
 
 componentDidMount() {
-  axios.get("https://safe-crag-41140.herokuapp.com/api/v1/key", {crossdomain: true})
-    .then((response) => {
-      var key = response.data
-        debugger;
-})
-}
+            }
+            
 
 handleType(event) {
   this.setState({typeText: event.target.value});
@@ -48,12 +46,14 @@ handleSave(event) {
     var distance = (this.state.distanceText)
     var price = (this.state.priceText)
     var locat = (this.state.locationText)
-    debugger;
+  debugger;
 }
+//store_json = @conn.get("maps/api/place/nearbysearch/json?location=#{lat},#{lon}&radius=#{radius}&type=bar&maxprice=#{price}&key=#{ENV['API_KEY']}")
 
 render() {
   return (
       <div>
+      <LocaButton/>
       <form>
       <label>
       Location:
@@ -87,7 +87,7 @@ render() {
   </form>
     </div>
     );
-      }
+}
 }
 export default SubmitForm;
 
