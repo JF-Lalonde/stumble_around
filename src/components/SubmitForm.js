@@ -19,6 +19,14 @@ class SubmitForm extends React.Component {
   
 }
 
+componentDidMount() {
+  axios.get("https://safe-crag-41140.herokuapp.com/api/v1/key", {crossdomain: true})
+    .then((response) => {
+      var key = response.data
+        debugger;
+})
+}
+
 handleType(event) {
   this.setState({typeText: event.target.value});
 }
@@ -36,16 +44,11 @@ handleLocation(event){
 }
 
 handleSave(event) {
-  axios.get("https://safe-crag-41140.herokuapp.com/api/v1/key", {crossdomain: true})
-    .then((response) => {
-      var key = response.data
-
   var type = (this.state.typeText)
     var distance = (this.state.distanceText)
     var price = (this.state.priceText)
     var locat = (this.state.locationText)
     debugger;
-    })
 }
 
 render() {
