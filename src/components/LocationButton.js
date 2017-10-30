@@ -57,8 +57,8 @@ function getLocation(){
   render() {
     return (
       <div>
-      <button class="pure-button pure-button-primary">Get my location</button>
-      <div class="result"></div>
+      <button className="pure-button pure-button-primary">Get my location</button>
+      <div className="result"></div>
       </div>
       );
   }
