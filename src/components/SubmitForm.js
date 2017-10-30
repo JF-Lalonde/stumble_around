@@ -10,13 +10,11 @@ class SubmitForm extends React.Component {
     this.handleType = this.handleType.bind(this);
     this.handlePrice = this.handlePrice.bind(this);
     this.handleDistance = this.handleDistance.bind(this);
-    this.handleLocation = this.handleLocation.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.state = {
       typeText: '',
       priceText: '',
       distanceText: '',
-      locationText: '',
     };
   
 }
@@ -37,28 +35,23 @@ handleDistance(event){
   this.setState({distanceText: event.target.value});
 }
 
-handleLocation(event){
-  this.setState({locationText: event.target.value});
-}
 
 handleSave(event) {
   var type = (this.state.typeText)
-    var distance = (this.state.distanceText)
-    var price = (this.state.priceText)
-    var locat = (this.state.locationText)
+  var distance = (this.state.distanceText)
+  var price = (this.state.priceText)
+  $.getJSON("https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + `location=${window.lat},${window.lng}&radius=${distance}&type=${type}&maxprice=${price}&key=${window.apKey}`, {crossdomain: true})
+  .then((response) => {
+    console.log(response);
   debugger;
+  })
 }
-//store_json = @conn.get("maps/api/place/nearbysearch/json?location=#{lat},#{lon}&radius=#{radius}&type=bar&maxprice=#{price}&key=#{ENV['API_KEY']}")
 
 render() {
   return (
       <div>
       <LocaButton/>
       <form>
-      <label>
-      Location:
-      <input type="text" value={this.state.locationText} onChange={this.handleLocation} />
-      </label>
       <label>
       Distance:
       <input type="text" value={this.state.distanceText} onChange={this.handleDistance} />
