@@ -8,10 +8,6 @@ class LocaButton extends Component {
   }
 
 componentDidMount() {
-axios.get("https://safe-crag-41140.herokuapp.com/api/v1/key", {crossdomain: true})
-.then((response) => {
-  window.apKey = response.data
-})
 function getLocation(){
   var msg; 
 
@@ -56,7 +52,7 @@ function getLocation(){
 
   render() {
     return (
-      <div>
+        <div>
       <button className="pure-button pure-button-primary">Get my location</button>
       <div className="result"></div>
       </div>

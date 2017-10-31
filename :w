@@ -1,9 +1,8 @@
-import $ from 'jquery';
+import $ from 'jquery'; 
 import axios from 'axios';
 import React, { Component } from 'react';
 import {geolocated} from 'react-geolocated';
 import LocaButton from './LocationButton';
-import PlaceList from './PlaceList';
 /*global google*/
 
 class SubmitForm extends React.Component {
@@ -17,7 +16,6 @@ class SubmitForm extends React.Component {
       typeText: '',
       priceText: '',
       distanceText: '',
-      places: [],
     };
 
   }
@@ -41,13 +39,17 @@ class SubmitForm extends React.Component {
 
   handleSave(event) {
     var type = (this.state.typeText)
-    var distance = (this.state.distanceText)
-    var price = (this.state.priceText)
-    this.test = "hi"
+      var distance = (this.state.distanceText)
+      var price = (this.state.priceText)
+      //$.getJSON("https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + `location=${window.lat},${window.lng}&radius=${distance}&type=${type}&maxprice=${price}&key=${window.apKey}`, {crossdomain: true})
+      //.then((response) => {
+      //console.log(response);
+      //})
 
-    var map;
+      var map;
     var infowindow;
 
+    function initMap() {
       var pyrmont = {lat: window.lat, lng: window.lng};
 
       map = new google.maps.Map(document.getElementById('map'), {
@@ -62,17 +64,22 @@ class SubmitForm extends React.Component {
         radius: distance,
         maxprice: price,
         type: [type]
-      }, callback.bind(this) )
-
+      }, callback);
+    }
 
     function callback(results, status) {
-      this.setState({places: results})
+      var thing = []
+        results.map(function(a){
+        thing.push(a.name)
+        thing.push(a.rating)
+      })
+      debugger;
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        console.log(this)
         for (var i = 0; i < results.length; i++) {
           createMarker(results[i]);
         }
       }
+      debugger;
     }
 
     function createMarker(place) {
@@ -87,11 +94,12 @@ class SubmitForm extends React.Component {
         infowindow.open(map, this);
       });
     }
+    initMap();
   }
 
   render() {
     return (
-        <div>
+        <div> 
         <LocaButton/>
         <form>
         <label>
@@ -121,7 +129,6 @@ class SubmitForm extends React.Component {
         {this.handleSave}>Save</button>
     </form>
       <div id="map"></div>
-        <PlaceList places={this.state.places}/>
       </div>
       );
   }
