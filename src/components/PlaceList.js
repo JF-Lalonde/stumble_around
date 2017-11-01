@@ -24,6 +24,7 @@ class PlaceList extends Component {
 }
 
 
+
 export default PlaceList;
 
 

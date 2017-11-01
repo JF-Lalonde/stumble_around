@@ -6,6 +6,7 @@ import LocaButton from './LocationButton';
 import PlaceList from './PlaceList';
 /*global google*/
 
+
 class SubmitForm extends React.Component {
   constructor(props) {
     super(props);
@@ -40,6 +41,7 @@ class SubmitForm extends React.Component {
 
 
   handleSave(event) {
+    //add button for walk, bike or cr
     var type = (this.state.typeText)
     var distance = (this.state.distanceText)
     var price = (this.state.priceText)

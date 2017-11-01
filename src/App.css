@@ -31,20 +31,51 @@
 }
 
 #map {
-  width: 75%;
+  width: 73%;
   height: 700px;
   float: right;
+  border-style: solid;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 0px;
+  margin-top: -5px;
+  font-family: futura;
 }
 
 .p-contain {
   float: right;
   text-align: center;
-  width: 25%;
-  height: 700px;
-  background-color: #ffe6e6;
+  width: 24%;
+  height: 703px;
+  background-color: #BAC9D6;
   font-size: 10px;
   overflow-y:scroll;
+  margin-right: 10px;
 }
+
+.place {
+  border-style: solid;
+}
+
+.save, .pure-button {
+  height: 40px;
+  width: 150px;
+  border: 2px solid;
+  margin: 20px 20px 20px 20px;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color:none;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+}
+ body {
+   background-color: #7FA7CB;
+ }
 
 
 
