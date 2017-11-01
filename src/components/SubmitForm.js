@@ -98,11 +98,11 @@ class SubmitForm extends React.Component {
         <form>
         <label>
         Distance:
-        <input type="text" value={this.state.distanceText} onChange={this.handleDistance} />
+        <input type="text" class="f-input" value={this.state.distanceText} onChange={this.handleDistance} />
         </label>
         <label>
         Price:
-        <select value={this.state.priceText} onChange={this.handlePrice}>
+        <select class="price-t" value={this.state.priceText} onChange={this.handlePrice}>
         <option value="0">Price</option>
         <option value="1">$</option>
         <option value="2">$$</option>
@@ -112,7 +112,7 @@ class SubmitForm extends React.Component {
         </label>
         <label>
         Type:
-        <select value={this.state.typeText} onChange={this.handleType}>
+        <select class ="price-t" value={this.state.typeText} onChange={this.handleType}>
         <option value="0">Type</option>
         <option value="bar">Bar</option>
         <option value="restaurant">Restaurant</option>

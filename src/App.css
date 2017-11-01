@@ -38,17 +38,24 @@
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 35px;
   margin-bottom: 0px;
   margin-top: -5px;
   font-family: futura;
 }
 
+.p-contain h4 {
+  margin-left: 300px;
+  font-size: 16px;
+  color: green;
+}
+
+
 .p-contain {
   float: right;
   text-align: center;
   width: 24%;
-  height: 703px;
+  height: 703.5px;
   background-color: #BAC9D6;
   font-size: 10px;
   overflow-y:scroll;
@@ -73,8 +80,63 @@ h1 {
   font-size: .8em;
   letter-spacing: 1.5px;
 }
+
+.save:hover, .pure-button:hover {
+  border: 5px solid;
+}
+
  body {
    background-color: #7FA7CB;
+ }
+
+ .f-input::placeholder {
+   color:black;
+   opacity:0.9;
+ }
+
+ .f-input {
+   background-color: transparent;
+   border:2px solid black;
+   transition: all 0.3s;
+   padding: 13px;
+   width:10%;
+   height: 10px;
+   box-sizing: border-box;
+   color:black;
+   font-family: Helvetica, Arial, sans-serif;
+   font-size: 18px;
+   border-radius: 4px;
+   line-height: 15px;
+   text-align:left;
+   margin-right: 20px;
+   margin-left: 10px;
+ }
+
+ .f-input:focus { 
+ border:2px solid #3a3939; }
+
+ textarea {
+   height: 250px;
+   line-height: 150%;
+   resize:vertical;
+ }
+
+ .price-t {
+   background-color: transparent;
+   border:2px solid black;
+   transition: all 0.3s;
+   padding: 13px;
+   width:10%;
+   box-sizing: border-box;
+   color:black;
+   font-family: Helvetica, Arial, sans-serif;
+   font-size: 18px;
+   border-radius: 4px;
+   line-height: 15px;
+   text-align:left;
+   margin-right: 20px;
+   margin-left: 10px;
+
  }
 
 
