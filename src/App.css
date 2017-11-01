@@ -31,8 +31,9 @@
 }
 
 #map {
-  width: 73%;
-  height: 700px;
+  width: 70%;
+  margin-top: 40px;
+  height: 650px;
   float: right;
   border-style: solid;
 }
@@ -52,11 +53,12 @@ h1 {
 
 
 .p-contain {
+  padding-right: 50px;
+  margin-top: 40px;
   float: right;
   text-align: center;
   width: 24%;
-  height: 703.5px;
-  background-color: #BAC9D6;
+  height: 656px;
   font-size: 10px;
   overflow-y:scroll;
   margin-right: 10px;
@@ -64,13 +66,18 @@ h1 {
 
 .place {
   border-style: solid;
+  padding-right: 50px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 .save, .pure-button {
   height: 40px;
   width: 150px;
   border: 2px solid;
-  margin: 20px 20px 20px 20px;
+  margin: 10px 10px 10px 20px;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
@@ -85,55 +92,66 @@ h1 {
   border: 5px solid;
 }
 
- body {
-   background-color: #7FA7CB;
- }
+body:after {
+  background-image: url("onebr1.png");
+  content : "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity : 0.4;
+  z-index: -1;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .f-input::placeholder {
-   color:black;
-   opacity:0.9;
- }
+.f-input::placeholder {
+  color:black;
+  opacity:0.9;
+}
 
- .f-input {
-   background-color: transparent;
-   border:2px solid black;
-   transition: all 0.3s;
-   padding: 13px;
-   width:10%;
-   height: 10px;
-   box-sizing: border-box;
-   color:black;
-   font-family: Helvetica, Arial, sans-serif;
-   font-size: 18px;
-   border-radius: 4px;
-   line-height: 15px;
-   text-align:left;
-   margin-right: 20px;
-   margin-left: 10px;
- }
+.f-input {
+  background-color: transparent;
+  border:2px solid black;
+  transition: all 0.3s;
+  padding: 13px;
+  width:10%;
+  height: 10px;
+  box-sizing: border-box;
+  color:black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  border-radius: 4px;
+  line-height: 15px;
+  text-align:left;
+  margin-right: 20px;
+  margin-left: 10px;
+}
 
- .f-input:focus { 
- border:2px solid #3a3939; }
+.f-input:focus { 
+border:2px solid #3a3939; }
 
- textarea {
-   height: 250px;
-   line-height: 150%;
-   resize:vertical;
- }
+textarea {
+  height: 250px;
+  line-height: 150%;
+  resize:vertical;
+}
 
- .price-t {
-   background-color: transparent;
-   border:2px solid black;
-   transition: all 0.3s;
-   padding: 13px;
-   width:10%;
-   box-sizing: border-box;
-   color:black;
-   font-family: Helvetica, Arial, sans-serif;
-   font-size: 18px;
-   border-radius: 4px;
-   line-height: 15px;
-   text-align:left;
+.price-t {
+  background-color: transparent;
+  border:2px solid black;
+  transition: all 0.3s;
+  padding: 13px;
+  width:10%;
+  box-sizing: border-box;
+  color:black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  border-radius: 4px;
+  line-height: 15px;
+  text-align:left;
    margin-right: 20px;
    margin-left: 10px;
 

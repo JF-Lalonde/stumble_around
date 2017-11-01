@@ -97,11 +97,9 @@ class SubmitForm extends React.Component {
         <LocaButton/>
         <form>
         <label>
-        Distance:
-        <input type="text" class="f-input" value={this.state.distanceText} onChange={this.handleDistance} />
+        <input type="text" placeholder="Distance" class="f-input" value={this.state.distanceText} onChange={this.handleDistance} />
         </label>
         <label>
-        Price:
         <select class="price-t" value={this.state.priceText} onChange={this.handlePrice}>
         <option value="0">Price</option>
         <option value="1">$</option>
@@ -111,16 +109,15 @@ class SubmitForm extends React.Component {
         </select>
         </label>
         <label>
-        Type:
         <select class ="price-t" value={this.state.typeText} onChange={this.handleType}>
         <option value="0">Type</option>
         <option value="bar">Bar</option>
         <option value="restaurant">Restaurant</option>
         <option value="cafe">Cafe</option>
         </select>
-        </label>
+        </label> 
         <button className="save" type="button" onClick=
-        {this.handleSave}>Save</button>
+        {this.handleSave}>Submit</button>
     </form>
       <div id="map"></div>
         <PlaceList places={this.state.places}/>
