@@ -68,7 +68,6 @@ class SubmitForm extends React.Component {
     function callback(results, status) {
       this.setState({places: results})
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        console.log(this)
         for (var i = 0; i < results.length; i++) {
           createMarker(results[i]);
         }
@@ -92,6 +91,7 @@ class SubmitForm extends React.Component {
   render() {
     return (
         <div>
+        <h1>Stumble Around</h1>
         <LocaButton/>
         <form>
         <label>
