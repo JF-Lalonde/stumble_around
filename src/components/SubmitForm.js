@@ -13,11 +13,13 @@ class SubmitForm extends React.Component {
     this.handleType = this.handleType.bind(this);
     this.handlePrice = this.handlePrice.bind(this);
     this.handleDistance = this.handleDistance.bind(this);
+    this.handleKeyword = this.handleKeyword.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.state = {
       typeText: '',
       priceText: '',
       distanceText: '',
+      keyw: '',
       places: [],
     };
 
@@ -29,6 +31,10 @@ class SubmitForm extends React.Component {
 
   handleType(event) {
     this.setState({typeText: event.target.value});
+  }
+
+  handleKeyword(event){
+    this.setState({keyw: event.target.value});
   }
 
   handlePrice(event){
@@ -45,7 +51,7 @@ class SubmitForm extends React.Component {
     var type = (this.state.typeText)
     var distance = (this.state.distanceText)
     var price = (this.state.priceText)
-    this.test = "hi"
+    var keyword = (this.state.keyw)
 
     var map;
     var infowindow;
@@ -63,7 +69,8 @@ class SubmitForm extends React.Component {
         location: pyrmont,
         radius: distance,
         maxprice: price,
-        type: [type]
+        type: [type],
+        keyword: keyword
       }, callback.bind(this) )
 
 
@@ -115,6 +122,9 @@ class SubmitForm extends React.Component {
         <option value="restaurant">Restaurant</option>
         <option value="cafe">Cafe</option>
         </select>
+        <label>
+        <input type="text" placeholder="Keyword" class="f-input" value={this.state.keyw} onChange={this.handleKeyword} />
+        </label>
         </label> 
         <button className="save" type="button" onClick=
         {this.handleSave}>Submit</button>
