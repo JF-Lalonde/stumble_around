@@ -75,6 +75,7 @@ class SubmitForm extends React.Component {
 
 
     function callback(results, status) {
+      debugger;
       this.setState({places: results})
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
@@ -129,7 +130,9 @@ class SubmitForm extends React.Component {
         <button className="save" type="button" onClick=
         {this.handleSave}>Submit</button>
     </form>
+      <div class="m-contain">
       <div id="map"></div>
+      </div>
         <PlaceList places={this.state.places}/>
       </div>
       );
