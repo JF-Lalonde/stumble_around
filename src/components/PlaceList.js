@@ -13,7 +13,7 @@ class PlaceList extends Component {
       <h2>{place.name}</h2> 
       <h3>{place.vicinity}</h3>
       <h4>{place.rating}</h4>
-      <a class="button" href= {`https://www.google.com/maps/dir/ + ${window.lat},${window.lng}/${place.vicinity}`}>Button</a>
+      <a class="buttond" href= {`https://www.google.com/maps/dir/ + ${window.lat},${window.lng}/${place.vicinity}`}>Directions</a>
       </div>
       )
     return (
