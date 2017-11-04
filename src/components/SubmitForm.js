@@ -49,7 +49,7 @@ class SubmitForm extends React.Component {
   handleSave(event) {
     //add button for walk, bike or cr
     var type = (this.state.typeText)
-    var distance = (this.state.distanceText)
+    var distance = (this.state.distanceText * 65)
     var price = (this.state.priceText)
     var keyword = (this.state.keyw)
 
@@ -105,7 +105,7 @@ class SubmitForm extends React.Component {
         <LocaButton/>
         <form>
         <label>
-        <input type="text" placeholder="Distance" class="f-input" value={this.state.distanceText} onChange={this.handleDistance} />
+        <input type="text" placeholder="Time" class="f-input" value={this.state.distanceText} onChange={this.handleDistance} />
         </label>
         <label>
         <select class="price-t" value={this.state.priceText} onChange={this.handlePrice}>
