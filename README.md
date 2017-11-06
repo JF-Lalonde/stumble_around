@@ -6,3 +6,8 @@
 
 To Run:
 `npm start`
+
+* Make sure to enable location services on your computer or device. 
+
+* All input fields are mandatory except for keyword. 
+
